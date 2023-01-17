@@ -1,0 +1,127 @@
+.header{
+  color: rgb(46, 2, 29);
+  background: rgb(255, 169, 205);
+  font-size: 20px;
+  height: 80px;
+  line-height: 80px;
+  padding-left: 30px;
+}
+
+.footer{
+  color: rgb(46, 2, 29);
+  font-size: 14px;
+  font-style: italic;
+  background-color: rgba(255, 169, 205, 0.445);
+  text-align: right;
+  height: 30px;
+  line-height: 30px;
+  padding-right: 20px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.gallery {
+    width: 100%;
+    /*полный размер*/
+    display: grid;
+    /* сетка */
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    /*автросатическая подстройка под дисплей*/
+  }
+  
+  .card {
+    position: relative;
+    /*подстройка картинки под ячейку*/
+    height: 400px;
+    /*высота*/
+    cursor: zoom-in;
+  }
+  
+  .pic {
+    position: absolute;
+    /*позиция относительно ячейки*/
+    width: 100%;
+    /*ширина*/
+    height: 100%;
+    object-fit: cover;
+    /*чтобы картинка не сжималась*/
+    transition: 0.5s;
+    /*время анимации*/
+  }
+  
+  .card:hover .pic {
+    /*наведение*/
+    transform: scale(1.1);
+    /*увеличение масштаба на 1,1 от масштаба*/
+  }
+  
+  .slider {
+    /*фон для слайдера*/
+    opacity: 0;
+    /*видимость*/
+    position: fixed;
+    top: 0;
+    /*прижат к верху*/
+    left: 0;
+    /*прижат к левой стороне*/
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    pointer-events: none;
+    /*отсутствие реакции на событие*/
+  }
+  
+  .active {
+    opacity: 1;
+    pointer-events: all;
+  }
+  
+  .slider__box {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    /*расположение по центру*/
+    transform: translate(-50%, -50%);
+    /*перемещение*/
+    background-color: #fff;
+    width: 80vw;
+    /*80% от видимой области*/
+    height: 80vh;
+  }
+  
+  .slider__btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    /*Границы*/
+    padding: 20px;
+    /*Отступ*/
+    font-size: 30px;
+    z-index: 50;
+    /*попадание*/
+  }
+  
+  .slider__btn_left {
+    left: 25px;
+  }
+  
+  .slider__btn_right {
+    right: 25px;
+  }
+  
+  .slider__close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 30px;
+    padding: 20px;
+    color: #fff;
+    background: none;
+    border: none;
+  }
+
+  
